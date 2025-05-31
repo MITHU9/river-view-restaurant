@@ -86,11 +86,11 @@ export default function Hero() {
         effect="fade"
         speed={1000}
         loop={true}
-        className="w-full h-full"
+        className="w-full h-[50%] lg:h-[75%]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-[50%] lg:h-[75vh] relative">
+            <div className="w-full h-full lg:h-full relative">
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{
