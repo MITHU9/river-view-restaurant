@@ -39,12 +39,12 @@ export default function FoodGallery() {
   return (
     <div>
       <div className="bg-[#3A0C01] bg-center h-28 flex items-center justify-center text-white text-4xl ">
-        Gallary
+        Gallery
       </div>
       <div className="bg-[#2D0900]">
         <div className="p-6 max-w-7xl mx-auto ">
           {/* Category Tabs */}
-          <div className="flex space-x-4 mb-6">
+          <div className="flex space-x-4 mb-8">
             {categories.map((cat) => (
               <button
                 key={cat}

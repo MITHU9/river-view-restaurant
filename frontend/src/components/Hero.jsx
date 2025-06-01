@@ -48,7 +48,7 @@ export default function Hero() {
                   to="/gallary"
                   className="hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
-                  Gallary
+                  Gallery
                 </Link>
               </li>
             </ul>
