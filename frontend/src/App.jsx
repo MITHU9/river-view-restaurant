@@ -1,9 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="text-3xl font-bold text-amber-300">
+    <div>
+      <Hero />
       <Outlet />
+      <Footer />
     </div>
   );
 };

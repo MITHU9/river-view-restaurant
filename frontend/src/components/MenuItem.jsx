@@ -6,7 +6,7 @@ const MenuItem = ({ name, description, price, image }) => {
           style={{ borderRadius: "0 200px 200px 200px" }}
           src={image}
           alt={name}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center border border-amber-400"
           loading="lazy"
         />
       </div>

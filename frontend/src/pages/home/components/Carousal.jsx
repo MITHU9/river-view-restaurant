@@ -3,7 +3,6 @@ import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -23,62 +22,9 @@ const slides = [
   },
 ];
 
-export default function Hero() {
+const Carousal = () => {
   return (
-    <div className="h-[65vh] lg:h-screen w-screen ">
-      <div>
-        <div className="bg-[#3A0C01] flex items-center justify-center py-14">
-          <img src="/logo.png" alt="" />
-        </div>
-
-        <div>
-          <nav className="bg-[#2D0900]">
-            <ul className="flex justify-center space-x-8 py-5 text-sm font-normal text-yellow-700 h-full ">
-              <li>
-                <Link
-                  href="#"
-                  className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
-                >
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
-                >
-                  Gallary
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
+    <div className="w-screen h-[40vh] lg:h-[75vh] relative">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -86,7 +32,7 @@ export default function Hero() {
         effect="fade"
         speed={1000}
         loop={true}
-        className="w-full h-[58%] lg:h-[75%]"
+        className="w-full h-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -117,4 +63,5 @@ export default function Hero() {
       </Swiper>
     </div>
   );
-}
+};
+export default Carousal;

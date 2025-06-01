@@ -14,14 +14,14 @@ export const menuItems = [
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
     price: "$14.5",
-    image: "/pizza-bg.jpg",
+    image: "/salad-bg.jpg",
   },
   {
     name: "Escalope de Veau",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
     price: "$14.5",
-    image: "/pizza-bg.jpg",
+    image: "/soup-bg.jpg",
   },
   {
     name: "Chicken and Walnut Salad",
@@ -65,7 +65,7 @@ const MenuSection = () => {
         </div>
 
         <div className="flex justify-center mt-12">
-          <button className="uppercase tracking-widest text-sm border-b border-stone-400 pb-1 hover:border-stone-600 transition-all duration-300 font-medium rounded-b-xl px-2 py-2 cursor-pointer">
+          <button className="uppercase tracking-widest text-sm border-b border-stone-400 pb-1 hover:border-stone-600 transition-all duration-300 font-medium rounded-b-xl px-2 py-2 cursor-pointer text-amber-300">
             View Full Menu
           </button>
         </div>
