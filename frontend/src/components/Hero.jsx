@@ -13,7 +13,7 @@ export default function Hero() {
             <ul className="flex justify-center space-x-8 py-5 text-sm font-normal text-yellow-700 h-full ">
               <li>
                 <Link
-                  href="#"
+                  to="/"
                   className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
                   Home
@@ -21,7 +21,7 @@ export default function Hero() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/about"
                   className="hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
                   About
@@ -29,7 +29,7 @@ export default function Hero() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/menu"
                   className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
                   Menu
@@ -37,7 +37,7 @@ export default function Hero() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/contact"
                   className=" hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
                   Contact
@@ -45,7 +45,7 @@ export default function Hero() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/gallary"
                   className="hover:bg-red-900 hover:text-white p-5 transition-all duration-300"
                 >
                   Gallary

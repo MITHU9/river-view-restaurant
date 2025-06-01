@@ -14,9 +14,9 @@ const MenuItem = ({ name, description, price, image }) => {
       <div className="flex-1 pl-4">
         <div className="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1 mb-2">
           <h3 className="font-serif uppercase text-stone-300 tracking-wider text-sm font-medium group-hover:text-stone-400 transition-colors duration-300">
-            {name} ---------------
+            {name}
           </h3>
-          <span className="text-amber-600 text-lg font-medium">{price}</span>
+          <span className="text-amber-600 text-lg font-medium">Tk.{price}</span>
         </div>
         <p className="text-stone-400 text-sm leading-relaxed font-normal">
           {description}

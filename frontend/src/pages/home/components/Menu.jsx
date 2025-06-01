@@ -6,42 +6,42 @@ export const menuItems = [
     name: "Roast Duck Breast",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Tuna Niçoise",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/salad-bg.jpg",
   },
   {
     name: "Escalope de Veau",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/soup-bg.jpg",
   },
   {
-    name: "Chicken and Walnut Salad",
+    name: "Chicken and Pizza Salad",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Fish Parmentier",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Roasted Pork Belly",
     description:
       "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "$14.5",
+    price: "14.5",
     image: "/pizza-bg.jpg",
   },
 ];

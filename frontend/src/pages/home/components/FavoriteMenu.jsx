@@ -7,28 +7,28 @@ const menuItems = [
     title: "Neque porro quisquam",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-    price: "$10",
+    price: "10",
     image: "/pizza-bg.jpg",
   },
   {
     title: "Neque porro quisquam",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-    price: "$18",
+    price: "18",
     image: "/salad-bg.jpg",
   },
   {
     title: "Neque porro quisquam",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-    price: "$20",
+    price: "20",
     image: "/dessert-bg.jpeg",
   },
   {
     title: "Neque porro quisquam",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-    price: "$15",
+    price: "15",
     image: "/soup-bg.jpg",
   },
 ];
@@ -61,7 +61,7 @@ const FavoriteMenu = () => {
               </h3>
               <p className="text-sm text-gray-700">{item.description}</p>
               <button className="mt-4 bg-orange-600 text-white py-1 px-4 text-sm ">
-                {item.price}
+                Tk.{item.price}
               </button>
             </div>
           </div>

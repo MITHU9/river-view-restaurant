@@ -1,6 +1,5 @@
 import Carousal from "./components/Carousal";
 import FavoriteMenu from "./components/FavoriteMenu";
-
 import MenuSection from "./components/Menu";
 import WelcomeSection from "./components/Welcome";
 
