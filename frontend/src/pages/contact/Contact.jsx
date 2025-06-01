@@ -56,7 +56,7 @@ export default function Contact() {
             <label className="block mb-1 font-medium">Name</label>
             <input
               type="text"
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 "
               placeholder="Your Name"
             />
           </div>
@@ -64,7 +64,7 @@ export default function Contact() {
             <label className="block mb-1 font-medium">Email</label>
             <input
               type="email"
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2  "
               placeholder="you@example.com"
             />
           </div>
@@ -72,7 +72,7 @@ export default function Contact() {
             <label className="block mb-1 font-medium">Message</label>
             <textarea
               rows="4"
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 "
               placeholder="Write your message..."
             ></textarea>
           </div>
@@ -85,8 +85,10 @@ export default function Contact() {
         </form>
       </section>
 
+      <hr className="border-gray-400" />
+
       {/* Location Highlight */}
-      <section className="bg-white/80 backdrop-blur-sm py-16">
+      <section className="bg-[#2D0900] backdrop-blur-sm py-16 text-gray-200">
         <div className=" text-center">
           <h3 className="text-2xl font-semibold mb-4">Where to Find Us</h3>
           <p className="text-lg mb-4">

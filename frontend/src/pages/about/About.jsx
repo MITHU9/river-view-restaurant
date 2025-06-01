@@ -83,8 +83,10 @@ export default function AboutUs() {
         </div>
       </section>
 
+      <hr className="border border-white/50" />
+
       {/* Call to Action */}
-      <section className="bg-gray-800 text-white text-center py-20 px-6">
+      <section className="bg-[#2D0900] text-white text-center py-20 px-6">
         <h3 className="text-3xl font-bold mb-4">Plan Your Stay</h3>
         <p className="text-lg mb-6 max-w-xl mx-auto">
           Ready to unwind by the river? Book your escape today and let nature

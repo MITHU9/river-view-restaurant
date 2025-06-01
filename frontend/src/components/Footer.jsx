@@ -1,9 +1,10 @@
 import React from "react";
 import { Facebook, Instagram, Twitter, Leaf } from "lucide-react"; // Replace or add icons as needed
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-red-950 text-white py-10">
+    <footer className="bg-[#2d0405f8] text-white py-10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center ">
         {/* About */}
         <div>
@@ -28,18 +29,22 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-4">Follow Us</h2>
           <div className="flex space-x-4 text-gray-400">
-            <a href="#" className="hover:text-white">
+            <Link
+              to="https://www.facebook.com/restuarantpabnariverview"
+              target="_blank"
+              className="hover:text-white"
+            >
               <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link to="#" className="hover:text-white">
               <Instagram className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link to="#" className="hover:text-white">
               <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link to="#" className="hover:text-white">
               <Leaf className="w-5 h-5" /> {/* Use as TripAdvisor-style icon */}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
