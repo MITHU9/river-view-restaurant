@@ -25,7 +25,7 @@ const slides = [
 
 export default function Hero() {
   return (
-    <div className="h-screen w-screen ">
+    <div className="h-[65vh] lg:h-screen w-screen ">
       <div>
         <div className="bg-[#3A0C01] flex items-center justify-center py-14">
           <img src="/logo.png" alt="" />
@@ -86,7 +86,7 @@ export default function Hero() {
         effect="fade"
         speed={1000}
         loop={true}
-        className="w-full h-[50%] lg:h-[75%]"
+        className="w-full h-[58%] lg:h-[75%]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
