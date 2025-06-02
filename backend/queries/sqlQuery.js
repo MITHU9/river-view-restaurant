@@ -19,6 +19,7 @@ const createFoodQuery = `
   VALUES ($1, $2, $3, COALESCE($4, false), $5, $6, $7)
   RETURNING *;
 `;
+
 const getAllFoodQuery = `
   SELECT * FROM food_table
   ORDER BY created_at DESC;
