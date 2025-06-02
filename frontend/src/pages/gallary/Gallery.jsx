@@ -7,16 +7,16 @@ const categories = ["All", "Event", "News", "Gallery"];
 const images = [
   { src: "/pizza-bg.jpg", category: "Event", date: "2025-07-20" },
   { src: "/soup-bg.jpg", category: "News", date: "2025-06-15" },
-  { src: "/pizza-bg.jpg", category: "Event", date: "2025-05-10" },
+  { src: "/slide1.jpg", category: "Event", date: "2025-05-10" },
   { src: "/soup-bg.jpg", category: "Event", date: "2025-07-12" },
   { src: "/pizza-bg.jpg", category: "News", date: "2025-06-20" },
-  { src: "/pizza-bg.jpg", category: "News", date: "2025-07-01" },
-  { src: "/salad-bg.jpg", category: "Event", date: "2025-07-08" },
-  { src: "/salad-bg.jpg", category: "Gallery", date: "2025-07-05" },
+  { src: "/slide3.jpg", category: "News", date: "2025-07-01" },
   { src: "/pizza-bg.jpg", category: "Gallery", date: "2025-06-22" },
-  { src: "/salad-bg.jpg", category: "Event", date: "2025-05-30" },
+  { src: "/slide5.jpg", category: "Event", date: "2025-07-08" },
+  { src: "/salad-bg.jpg", category: "Gallery", date: "2025-07-05" },
+  { src: "/slide2.jpg", category: "Event", date: "2025-05-30" },
   { src: "/pizza-bg.jpg", category: "News", date: "2025-06-10" },
-  { src: "/soup-bg.jpg", category: "Gallery", date: "2025-04-25" },
+  { src: "/slide4.jpg", category: "Gallery", date: "2025-04-25" },
 ];
 
 export default function FoodGallery() {
