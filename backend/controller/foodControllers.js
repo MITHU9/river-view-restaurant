@@ -1,5 +1,5 @@
 import pool from "../config/db.js";
-import { createFoodQuery } from "../queries/sqlQuery.js";
+import { createFoodQuery, getAllFoodQuery } from "../queries/sqlQuery.js";
 
 const createFoodItem = async (req, res) => {
   const { name, category, price, is_vegetarian, description, ingredients } =
@@ -29,4 +29,15 @@ const createFoodItem = async (req, res) => {
   }
 };
 
-export { createFoodItem };
+//get all food items
+const getAllFoodItems = async (req, res) => {
+  try {
+    const result = await pool.query(getAllFoodQuery);
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching food items");
+  }
+};
+
+export { createFoodItem, getAllFoodItems };
