@@ -7,17 +7,17 @@ import "swiper/css/effect-fade";
 const slides = [
   {
     title: "Cozy Dinner",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    text: "Enjoy the comfort of a quiet evening surrounded by warm lighting and a relaxed atmosphere, where comforting dishes bring a sense of home and togetherness. Whether you’re sharing the meal with loved ones or unwinding after a long day, a cozy dinner invites you to slow down, savor every bite, and engage in genuine conversation, creating moments of peace and connection one plate at a time.",
     image: "/banner.jpg",
   },
   {
     title: "Romantic Ambiance",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+    text: "Step into a world of soft lighting, gentle music, and intimate elegance. Our romantic ambiance is designed to set the perfect mood for love and connection. Whether it’s a first date, anniversary, or a quiet dinner for two, every detail—from candlelit tables to the serene atmosphere—invites you to slow down, savor the moment, and make memories that linger long after the last bite.",
     image: "/banner2.jpg",
   },
   {
     title: "Elegant Dining",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    text: "Experience the art of fine dining where every detail matters. At Elegant Dining, we blend exquisite cuisine, sophisticated ambiance, and impeccable service to create unforgettable moments. Whether it’s a romantic evening, a business dinner, or a special celebration, our curated menu and elegant setting offer the perfect backdrop. Indulge in culinary excellence—because every meal should be a masterpiece.",
     image: "/banner3.jpg",
   },
 ];

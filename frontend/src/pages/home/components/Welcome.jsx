@@ -9,7 +9,8 @@ export default function WelcomeSection() {
           Welcome!
         </h1>
         <p className="text-sm text-white/80">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          Welcome to a place where every bite tells a story and every moment
+          feels like home.
         </p>
       </div>
 
@@ -17,17 +18,17 @@ export default function WelcomeSection() {
         <InfoCard
           icon={Bookmark}
           title="Find Your Favorite"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Discover the joy of choosing what speaks to you. Whether it’s a dish, a style, or a moment, finding your favorite is about connecting with what truly delights your senses and brightens your day."
         />
         <InfoCard
           icon={Star}
           title="Best Seller"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Discover the joy of choosing what speaks to you. Whether it’s a dish, a style, or a moment, finding your favorite is about connecting with what truly delights your senses and brightens your day."
         />
         <InfoCard
           icon={Calendar}
           title="Reservation"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Discover the joy of choosing what speaks to you. Whether it’s a dish, a style, or a moment, finding your favorite is about connecting with what truly delights your senses and brightens your day."
         />
       </div>
     </section>

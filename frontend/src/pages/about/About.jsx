@@ -42,12 +42,14 @@ export default function AboutUs() {
             className="w-full h-96 object-cover shadow-lg"
           />
           <div className="">
-            <h3 className="text-3xl font-semibold mb-4">Chef Maria Delgado</h3>
+            <h3 className="text-3xl font-semibold mb-4">Chef Arif Hossain</h3>
             <p className="text-lg leading-relaxed">
-              Trained in the culinary capitals of Europe, Chef Maria brings
-              global elegance to local ingredients. Her dishes balance refined
-              technique with a soulful, rustic charm — redefining what it means
-              to eat well.
+              Trained in the culinary hubs of Europe and deeply rooted in the
+              flavors of Bangladesh, Chef Arif brings a world of experience to
+              every plate. His dishes marry classic technique with the warmth
+              and richness of Bengali cuisine — creating food that’s both
+              elevated and soulful. With every bite, he redefines what it means
+              to enjoy authentic Bangladeshi flavors with a modern touch
             </p>
           </div>
         </div>

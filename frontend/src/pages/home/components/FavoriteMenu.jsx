@@ -5,30 +5,30 @@ import SectionTitle from "../../../components/SectionTitle";
 
 const menuItems = [
   {
-    title: "Neque porro quisquam",
+    title: "Spicy Pepperoni Inferno",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "Loaded with spicy pepperoni, mozzarella, and a kick of red chili flakes, this pizza brings the heat without pizza brings losing the flavor.",
     price: "10",
     image: "/pizza-bg.jpg",
   },
   {
-    title: "Neque porro quisquam",
+    title: "Garden Fresh Veggie",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "A colorful medley of bell peppers, onions, mushrooms, black olives, and sweet corn on a tomato base, finished with melty mozzarella.",
     price: "18",
     image: "/salad-bg.jpg",
   },
   {
-    title: "Neque porro quisquam",
+    title: "Meat Lovers’ Feast",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "A hearty combination of pepperoni, sausage, beef, and smoked chicken with mozzarella on a classic red sauce base—meat lover’s dream come true.",
     price: "20",
     image: "/dessert-bg.jpeg",
   },
   {
-    title: "Neque porro quisquam",
+    title: "BBQ Chicken Delight",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "Tender grilled chicken smothered in smoky BBQ sauce, layered with red onions, mozzarella, and a hint of cilantro for the perfect bite.",
     price: "15",
     image: "/soup-bg.jpg",
   },

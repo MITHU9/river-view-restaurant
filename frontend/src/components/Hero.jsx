@@ -9,7 +9,7 @@ export default function Hero() {
     <div className="w-screen">
       <div>
         <div className="bg-[#3A0C01] flex flex-col items-center justify-center py-14">
-          <img className="size-24" src="/Asset12.png" alt="Logo" />
+          <img className="size-32" src="/LOGO2.png" alt="Logo" />
           <h2 className="text-lg font-semibold text-gray-200 italic">
             River View
           </h2>
