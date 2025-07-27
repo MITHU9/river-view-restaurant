@@ -28,7 +28,7 @@ export default function ManageFoodTable() {
       category: item.category,
       is_vegetarian: item.is_vegetarian,
       description: item.description,
-      ingredients: JSON.parse(item.ingredients),
+      ingredients: item.ingredients || [],
       imageFile: null,
       imageUrl: item.image_url,
     });

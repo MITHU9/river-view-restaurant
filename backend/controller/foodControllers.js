@@ -52,6 +52,10 @@ const updateFoodItem = async (req, res) => {
     req.body;
   const { id } = req.params;
 
+  const ingredientsJson = Array.isArray(ingredients)
+    ? ingredients
+    : JSON.parse(ingredients);
+
   try {
     const imageUrl = req.file ? req.file.path : null;
 
@@ -61,7 +65,7 @@ const updateFoodItem = async (req, res) => {
       category,
       is_vegetarian === "true" || is_vegetarian === true,
       description,
-      ingredients,
+      ingredientsJson,
       imageUrl,
       id,
     ]);
