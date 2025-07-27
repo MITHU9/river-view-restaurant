@@ -30,12 +30,6 @@ const SIDE_BAR = [
     href: "/dashboard/manage-food",
   },
   {
-    name: "Manage Users",
-    icon: Users,
-    color: "#6366f1",
-    href: "/dashboard/manage-users",
-  },
-  {
     name: "Sales",
     icon: DollarSign,
     color: "#6366f1",

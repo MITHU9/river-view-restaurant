@@ -19,15 +19,14 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-// Initialize database
-await initDB();
-
-//routes
-app.use("/api/food", foodRoutes);
-
 // Check DB connection
 try {
+  // Initialize database
+  await initDB();
   console.log("✅ Connected to DB successfully");
+
+  //routes
+  app.use("/api/food", foodRoutes);
 } catch (err) {
   console.error("❌ DB connection failed:", err.message);
   process.exit(1);

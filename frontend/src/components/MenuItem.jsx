@@ -1,7 +1,20 @@
+import { motion } from "framer-motion";
+
 const MenuItem = ({ name, description, price, image }) => {
   return (
-    <div className="flex items-start group">
-      <div className="w-24 h-24  flex-shrink-0 overflow-hidden transition-all duration-300 group-hover:shadow-md">
+    <motion.div
+      className="flex items-start group"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.div
+        className="w-24 h-24 flex-shrink-0 overflow-hidden transition-all duration-300 group-hover:shadow-md"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 150 }}
+      >
         <img
           style={{ borderRadius: "0 200px 200px 200px" }}
           src={image}
@@ -9,7 +22,7 @@ const MenuItem = ({ name, description, price, image }) => {
           className="w-full h-full object-cover object-center border border-amber-400"
           loading="lazy"
         />
-      </div>
+      </motion.div>
 
       <div className="flex-1 pl-4">
         <div className="flex justify-between items-baseline border-b border-dashed border-stone-200 pb-1 mb-2">
@@ -22,7 +35,7 @@ const MenuItem = ({ name, description, price, image }) => {
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

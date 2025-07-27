@@ -21,3 +21,10 @@ export const addFoodItem = async (foodData) => {
 
   return response.data;
 };
+
+export const getAllFoodItems = async () => {
+  const response = await axios.get(`${baseURL}/all-food`, {
+    withCredentials: true,
+  });
+  return response.data;
+};

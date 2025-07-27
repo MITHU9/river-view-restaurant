@@ -9,6 +9,7 @@ import FoodGallery from "../pages/gallary/Gallery";
 import Dashboard from "../layout/Dashboard";
 import AdminDashboard from "../pages/admin/home/Home";
 import FoodAddForm from "../pages/admin/addFood/FoodAddForm";
+import ManageFood from "../pages/admin/manageFood/ManageFood";
 React.lazy(() => import("../pages/about/About"));
 React.lazy(() => import("../pages/contact/Contact"));
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-food",
         element: <FoodAddForm />,
+      },
+      {
+        path: "/dashboard/manage-food",
+        element: <ManageFood />,
       },
     ],
   },

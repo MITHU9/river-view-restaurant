@@ -20,9 +20,40 @@ const createFoodQuery = `
   RETURNING *;
 `;
 
+const updateFoodQuery = `
+  UPDATE food_table
+  SET 
+    name = $1,
+    price = $2,
+    category = $3,
+    is_vegetarian = $4,
+    description = $5,
+    ingredients = $6,
+    image_url = COALESCE($7, image_url)
+  WHERE id = $8
+  RETURNING *;
+`;
+
+const deleteFoodQuery = `
+  DELETE FROM food_table
+  WHERE id = $1;
+`;
+
 const getAllFoodQuery = `
   SELECT * FROM food_table
   ORDER BY created_at DESC;
 `;
 
-export { createFoodTableQuery, createFoodQuery, getAllFoodQuery };
+const getFoodByIdQuery = `
+  SELECT * FROM food_table
+  WHERE id = $1;
+`;
+
+export {
+  createFoodTableQuery,
+  createFoodQuery,
+  getAllFoodQuery,
+  getFoodByIdQuery,
+  updateFoodQuery,
+  deleteFoodQuery,
+};
