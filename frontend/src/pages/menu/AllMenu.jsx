@@ -5,62 +5,63 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useAllCategories } from "../../hooks/useAllCategories";
 
+// Demo menu items (as before)
 export const menuItems = [
   {
     name: "Roast Duck Breast",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Roasted duck breast with gratin potato and cherry sauce",
     price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Tuna Niçoise",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Seared tuna with greens and olives",
     price: "14.5",
     image: "/salad-bg.jpg",
   },
   {
     name: "Escalope de Veau",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Veal cutlet with butter sauce",
     price: "14.5",
     image: "/soup-bg.jpg",
   },
   {
     name: "Chicken and Pizza Salad",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Grilled chicken over pizza-inspired greens",
     price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Fish Parmentier",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Layered mashed potatoes with white fish",
     price: "14.5",
     image: "/pizza-bg.jpg",
   },
   {
     name: "Roasted Pork Belly",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
+    description: "Crispy pork belly with spiced glaze",
     price: "14.5",
     image: "/pizza-bg.jpg",
   },
 ];
 
-const sliderImages = [
-  "/Asset2.png",
-  "/Asset3.png",
-  "/Asset5.png",
-  "/Asset6.png",
-  "/Asset7.png",
-];
-
 const MenuPage = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { data, isLoading } = useAllCategories();
+
+  if (isLoading)
+    return (
+      <div className="flex items-center justify-center h-screen bg-[#2D0900] text-white">
+        <div
+          className="text-2xl font-semibold animate-pulse"
+          style={{ color: "#FFB300" }}
+        >
+          Loading....
+        </div>
+      </div>
+    );
 
   return (
     <div>
@@ -69,89 +70,53 @@ const MenuPage = () => {
         Our Menu
       </div>
 
-      {/* Button to trigger popup */}
-      <div className="flex justify-center bg-[#2D0900] py-6">
-        <button
-          onClick={() => setShowModal(true)}
-          className="bg-white text-[#2D0900] font-semibold px-6 py-2 rounded shadow hover:bg-gray-200 transition cursor-pointer"
-        >
-          Show Full Menu
-        </button>
-      </div>
-
-      {/* Image Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black/70 bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-white/10 rounded-lg overflow-hidden w-full max-w-3xl relative border border-amber-400">
-            {/* Close button */}
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-2 right-2 text-white text-2xl font-bold z-10 cursor-pointer"
-            >
-              &times;
-            </button>
-
-            <Swiper
-              modules={[Navigation]}
-              navigation
-              spaceBetween={20}
-              slidesPerView={1}
-              className="w-full h-[95vh]"
-            >
-              {sliderImages.map((src, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={src}
-                    alt={`Slide ${index}`}
-                    className="w-full h-full object-contain"
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      )}
-
-      {/* Italian Food Section */}
-      <div className="bg-[#2D0900]">
-        <div className="w-full max-w-5xl mx-auto py-16 px-4">
-          <SectionTitle subtitle="Check it out" title="Italian Food" />
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={index}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                image={item.image}
-              />
+      {/* Category Slider */}
+      <div className="bg-[#2D0900] py-4">
+        <div className="max-w-6xl mx-auto px-4">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView="auto"
+            navigation
+            modules={[Navigation]}
+            className="!pb-6"
+          >
+            <SwiperSlide style={{ width: "auto" }}>
+              <button
+                onClick={() => setSelectedCategory("All")}
+                className={`px-4 py-2 rounded-full font-semibold text-sm ${
+                  selectedCategory === "All"
+                    ? "bg-amber-500 text-white"
+                    : "bg-white text-[#2D0900]"
+                }`}
+              >
+                All
+              </button>
+            </SwiperSlide>
+            {data.map((category, index) => (
+              <SwiperSlide key={index} style={{ width: "auto" }}>
+                <button
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full font-semibold text-sm cursor-pointer ${
+                    selectedCategory === category
+                      ? "bg-amber-500 text-white"
+                      : "bg-white text-[#2D0900]"
+                  }`}
+                >
+                  {category.toUpperCase()}
+                </button>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
 
-      {/* Chinese Food Section */}
+      {/* Menu Sections */}
       <div className="bg-[#2D0900]">
-        <div className="w-full max-w-5xl mx-auto py-16 px-4">
-          <SectionTitle subtitle="Check it out" title="Chinese Food" />
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={index}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                image={item.image}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Thai Food Section */}
-      <div className="bg-[#2D0900]">
-        <div className="w-full max-w-5xl mx-auto py-16 px-4">
-          <SectionTitle subtitle="Check it out" title="Thai Food" />
+        <div className="w-full max-w-5xl mx-auto py-8 px-4">
+          <SectionTitle
+            subtitle="Check it out"
+            title={selectedCategory || "All Foods"}
+          />
           <div className="grid md:grid-cols-2 gap-8 mt-12">
             {menuItems.map((item, index) => (
               <MenuItem

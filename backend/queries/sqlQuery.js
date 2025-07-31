@@ -49,10 +49,14 @@ const getFoodByIdQuery = `
   WHERE id = $1;
 `;
 
+const getAllCategoryQuery = `
+  SELECT DISTINCT category FROM food_table`;
+
 export {
   createFoodTableQuery,
   createFoodQuery,
   getAllFoodQuery,
+  getAllCategoryQuery,
   getFoodByIdQuery,
   updateFoodQuery,
   deleteFoodQuery,

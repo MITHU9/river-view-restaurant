@@ -2,6 +2,7 @@ import pool from "../config/db.js";
 import {
   createFoodQuery,
   deleteFoodQuery,
+  getAllCategoryQuery,
   getAllFoodQuery,
   getFoodByIdQuery,
   updateFoodQuery,
@@ -108,10 +109,23 @@ const deleteFoodItem = async (req, res) => {
   }
 };
 
+// Get all categories
+const getAllCategories = async (req, res) => {
+  try {
+    const result = await pool.query(getAllCategoryQuery);
+    const categories = result.rows.map((row) => row.category);
+    res.status(200).json(categories);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching categories");
+  }
+};
+
 export {
   createFoodItem,
   getAllFoodItems,
   getFoodById,
   updateFoodItem,
   deleteFoodItem,
+  getAllCategories,
 };

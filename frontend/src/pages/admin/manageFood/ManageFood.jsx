@@ -3,6 +3,7 @@ import { useAllFood } from "../../../hooks/useAllFood";
 import axios from "axios";
 import EditModal from "../../../components/EditModal";
 import { useEditFood } from "../../../hooks/useEditFood";
+import { baseURL } from "../../../constant/constant";
 
 export default function ManageFoodTable() {
   const { data, isLoading, isError, error, refetch } = useAllFood();
@@ -63,7 +64,7 @@ export default function ManageFoodTable() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this item?")) {
       try {
-        await axios.delete(`/api/food/${id}`);
+        await axios.delete(`${baseURL}/${id}`);
         refetch();
       } catch (err) {
         console.error("Error deleting:", err);
@@ -73,7 +74,9 @@ export default function ManageFoodTable() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white p-6">Loading...</div>
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+        <div className="bg-gray-900 text-white p-6">Loading...</div>
+      </div>
     );
   }
 
@@ -96,6 +99,8 @@ export default function ManageFoodTable() {
   });
 
   const categories = [...new Set(foodList.map((f) => f.category))];
+
+  console.log(data);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
@@ -172,7 +177,7 @@ export default function ManageFoodTable() {
                     onClick={() => handleDelete(food.id)}
                     className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm cursor-pointer"
                   >
-                    Delete
+                    {isLoading ? "Deleting..." : "Delete"}
                   </button>
                 </td>
               </tr>
@@ -194,6 +199,7 @@ export default function ManageFoodTable() {
           initialData={formData}
           onClose={() => setEditItem(null)}
           onSubmit={handleEditSubmit}
+          isLoading={editFoodMutation.isPending}
         />
       )}
     </div>

@@ -28,3 +28,10 @@ export const getAllFoodItems = async () => {
   });
   return response.data;
 };
+
+export const getAllCategories = async () => {
+  const response = await axios.get(`${baseURL}/categories`, {
+    withCredentials: true,
+  });
+  return response.data;
+};
