@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllFoodItems } from "../api/foodApi";
 
-export function useAllFood() {
+export const useFoodItems = (category = "all") => {
   return useQuery({
-    queryKey: ["foods"],
-    queryFn: getAllFoodItems,
-    staleTime: 1000 * 60 * 5,
+    queryKey: ["foods", category],
+    queryFn: () => getAllFoodItems(category),
     refetchOnWindowFocus: false,
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
-}
+};

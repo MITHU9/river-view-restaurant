@@ -22,10 +22,13 @@ export const addFoodItem = async (foodData) => {
   return response.data;
 };
 
-export const getAllFoodItems = async () => {
-  const response = await axios.get(`${baseURL}/all-food`, {
-    withCredentials: true,
-  });
+export const getAllFoodItems = async (category = "all") => {
+  const endpoint =
+    category.toLowerCase() === "all"
+      ? `${baseURL}/all-food`
+      : `${baseURL}/food-by-category/${encodeURIComponent(category)}`;
+
+  const response = await axios.get(endpoint, { withCredentials: true });
   return response.data;
 };
 

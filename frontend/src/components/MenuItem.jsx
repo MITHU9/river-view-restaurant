@@ -32,7 +32,9 @@ const MenuItem = ({ name, description, price, image }) => {
           <span className="text-amber-600 text-lg font-medium">Tk.{price}</span>
         </div>
         <p className="text-stone-400 text-sm leading-relaxed font-normal">
-          {description}
+          {description.length > 100
+            ? description.substring(0, 100) + "..."
+            : description}
         </p>
       </div>
     </motion.div>

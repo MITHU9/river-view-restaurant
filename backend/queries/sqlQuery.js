@@ -52,6 +52,12 @@ const getFoodByIdQuery = `
 const getAllCategoryQuery = `
   SELECT DISTINCT category FROM food_table`;
 
+const GET_FOODS_BY_CATEGORY = `
+  SELECT * FROM food_table
+  WHERE LOWER(category) = LOWER($1)
+  ORDER BY created_at DESC;
+`;
+
 export {
   createFoodTableQuery,
   createFoodQuery,
@@ -60,4 +66,5 @@ export {
   getFoodByIdQuery,
   updateFoodQuery,
   deleteFoodQuery,
+  GET_FOODS_BY_CATEGORY,
 };

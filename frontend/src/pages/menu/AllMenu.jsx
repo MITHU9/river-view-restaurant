@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useAllCategories } from "../../hooks/useAllCategories";
+import { useFoodItems } from "../../hooks/useAllFood";
 
 // Demo menu items (as before)
 export const menuItems = [
@@ -50,8 +51,10 @@ export const menuItems = [
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { data, isLoading } = useAllCategories();
+  const { data: foodItems, isLoading: loadingCategory } =
+    useFoodItems(selectedCategory);
 
-  if (isLoading)
+  if (isLoading || loadingCategory)
     return (
       <div className="flex items-center justify-center h-screen bg-[#2D0900] text-white">
         <div
@@ -62,6 +65,8 @@ const MenuPage = () => {
         </div>
       </div>
     );
+
+  //console.log(foodItems);
 
   return (
     <div>
@@ -118,15 +123,19 @@ const MenuPage = () => {
             title={selectedCategory || "All Foods"}
           />
           <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={index}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                image={item.image}
-              />
-            ))}
+            {loadingCategory ? (
+              <p className="text-white">Loading food...</p>
+            ) : (
+              (foodItems || menuItems).map((item, index) => (
+                <MenuItem
+                  key={index}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                  image={item.image_url}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useAllFood } from "../../../hooks/useAllFood";
+import { useFoodItems } from "../../../hooks/useAllFood";
 import axios from "axios";
 import EditModal from "../../../components/EditModal";
 import { useEditFood } from "../../../hooks/useEditFood";
 import { baseURL } from "../../../constant/constant";
 
 export default function ManageFoodTable() {
-  const { data, isLoading, isError, error, refetch } = useAllFood();
+  const { data, isLoading, isError, error, refetch } = useFoodItems();
 
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -100,7 +100,7 @@ export default function ManageFoodTable() {
 
   const categories = [...new Set(foodList.map((f) => f.category))];
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">

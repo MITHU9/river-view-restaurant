@@ -2,6 +2,7 @@ import pool from "../config/db.js";
 import {
   createFoodQuery,
   deleteFoodQuery,
+  GET_FOODS_BY_CATEGORY,
   getAllCategoryQuery,
   getAllFoodQuery,
   getFoodByIdQuery,
@@ -121,6 +122,24 @@ const getAllCategories = async (req, res) => {
   }
 };
 
+// Get foods by category
+const getFoodsByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  try {
+    if (!category || category.toLowerCase() === "all") {
+      const result = await pool.query(getAllFoodQuery);
+      return res.status(200).json(result.rows);
+    }
+
+    const result = await pool.query(GET_FOODS_BY_CATEGORY, [category]);
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error("Error fetching food by category:", err);
+    res.status(500).send("Error fetching food by category");
+  }
+};
+
 export {
   createFoodItem,
   getAllFoodItems,
@@ -128,4 +147,5 @@ export {
   updateFoodItem,
   deleteFoodItem,
   getAllCategories,
+  getFoodsByCategory,
 };

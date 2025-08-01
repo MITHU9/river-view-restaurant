@@ -6,6 +6,7 @@ import {
   getAllCategories,
   getAllFoodItems,
   getFoodById,
+  getFoodsByCategory,
   updateFoodItem,
 } from "../controller/foodControllers.js";
 
@@ -14,6 +15,7 @@ const router = express.Router();
 router.post("/add", upload.single("image"), createFoodItem);
 router.get("/all-food", getAllFoodItems);
 router.get("/categories", getAllCategories);
+router.get("/food-by-category/:category", getFoodsByCategory);
 router.get("/:id", getFoodById);
 router.put("/:id", upload.single("image"), updateFoodItem);
 router.delete("/:id", deleteFoodItem);
