@@ -7,52 +7,27 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useAllCategories } from "../../hooks/useAllCategories";
 import { useFoodItems } from "../../hooks/useAllFood";
-
-// Demo menu items (as before)
-export const menuItems = [
-  {
-    name: "Roast Duck Breast",
-    description: "Roasted duck breast with gratin potato and cherry sauce",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Tuna Niçoise",
-    description: "Seared tuna with greens and olives",
-    price: "14.5",
-    image: "/salad-bg.jpg",
-  },
-  {
-    name: "Escalope de Veau",
-    description: "Veal cutlet with butter sauce",
-    price: "14.5",
-    image: "/soup-bg.jpg",
-  },
-  {
-    name: "Chicken and Pizza Salad",
-    description: "Grilled chicken over pizza-inspired greens",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Fish Parmentier",
-    description: "Layered mashed potatoes with white fish",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Roasted Pork Belly",
-    description: "Crispy pork belly with spiced glaze",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-];
+import FoodDetailModal from "../../components/FoodDetailModal";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const [selectedFood, setSelectedFood] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { data, isLoading } = useAllCategories();
   const { data: foodItems, isLoading: loadingCategory } =
     useFoodItems(selectedCategory);
+
+  const handleOpenModal = (foodItem) => {
+    setSelectedFood(foodItem);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedFood(null);
+  };
 
   if (isLoading || loadingCategory)
     return (
@@ -126,17 +101,30 @@ const MenuPage = () => {
             {loadingCategory ? (
               <p className="text-white">Loading food...</p>
             ) : (
-              (foodItems || menuItems).map((item, index) => (
-                <MenuItem
+              foodItems.map((item, index) => (
+                <div
                   key={index}
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                  image={item.image_url}
-                />
+                  onClick={() => handleOpenModal(item)}
+                  className="cursor-pointer"
+                >
+                  <MenuItem
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image_url}
+                  />
+                </div>
               ))
             )}
           </div>
+          {/* Food Detail Modal */}
+          {selectedFood && (
+            <FoodDetailModal
+              food={selectedFood}
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+            />
+          )}
         </div>
       </div>
     </div>
