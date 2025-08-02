@@ -74,18 +74,6 @@ export default function Hero() {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link
-                to="/dashboard/overview"
-                className={`p-5 transition-all duration-300 ${
-                  isActive("/dashboard/overview")
-                    ? "bg-red-900 text-white"
-                    : "hover:bg-red-900 hover:text-white"
-                }`}
-              >
-                admin
-              </Link>
-            </li>
           </ul>
         </nav>
       </div>
