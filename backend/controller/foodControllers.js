@@ -39,8 +39,12 @@ const createFoodItem = async (req, res) => {
 
 //get all food items
 const getAllFoodItems = async (req, res) => {
+  const limit = parseInt(req.query.limit) || 10;
+  const page = parseInt(req.query.page) || 1;
+  const offset = (page - 1) * limit;
+
   try {
-    const result = await pool.query(getAllFoodQuery);
+    const result = await pool.query(getAllFoodQuery, [limit, offset]);
     res.status(200).json(result.rows);
   } catch (err) {
     console.error(err);
@@ -125,14 +129,21 @@ const getAllCategories = async (req, res) => {
 // Get foods by category
 const getFoodsByCategory = async (req, res) => {
   const { category } = req.params;
+  const limit = parseInt(req.query.limit) || 10;
+  const page = parseInt(req.query.page) || 1;
+  const offset = (page - 1) * limit;
 
   try {
     if (!category || category.toLowerCase() === "all") {
-      const result = await pool.query(getAllFoodQuery);
+      const result = await pool.query(getAllFoodQuery, [limit, offset]);
       return res.status(200).json(result.rows);
     }
 
-    const result = await pool.query(GET_FOODS_BY_CATEGORY, [category]);
+    const result = await pool.query(GET_FOODS_BY_CATEGORY, [
+      category,
+      limit,
+      offset,
+    ]);
     res.status(200).json(result.rows);
   } catch (err) {
     console.error("Error fetching food by category:", err);

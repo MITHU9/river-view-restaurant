@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://restaurant.thingkers.com"],
+    origin: ["http://localhost:5173", "https://restaurant.thingkers.com"],
     credentials: true,
   })
 );

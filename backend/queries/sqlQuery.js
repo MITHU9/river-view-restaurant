@@ -41,7 +41,8 @@ const deleteFoodQuery = `
 
 const getAllFoodQuery = `
   SELECT * FROM food_table
-  ORDER BY created_at DESC;
+  ORDER BY created_at DESC
+  LIMIT $1 OFFSET $2;
 `;
 
 const getFoodByIdQuery = `
@@ -55,7 +56,8 @@ const getAllCategoryQuery = `
 const GET_FOODS_BY_CATEGORY = `
   SELECT * FROM food_table
   WHERE LOWER(category) = LOWER($1)
-  ORDER BY created_at DESC;
+  ORDER BY created_at DESC
+  LIMIT $2 OFFSET $3;
 `;
 
 export {

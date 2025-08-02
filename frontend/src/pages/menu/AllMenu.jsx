@@ -11,13 +11,17 @@ import FoodDetailModal from "../../components/FoodDetailModal";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [page, setPage] = useState(1);
 
   const [selectedFood, setSelectedFood] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { data, isLoading } = useAllCategories();
-  const { data: foodItems, isLoading: loadingCategory } =
-    useFoodItems(selectedCategory);
+  const { data: foodItems, isLoading: loadingCategory } = useFoodItems(
+    selectedCategory,
+    page,
+    10
+  );
 
   const handleOpenModal = (foodItem) => {
     setSelectedFood(foodItem);
@@ -28,6 +32,14 @@ const MenuPage = () => {
     setIsModalOpen(false);
     setSelectedFood(null);
   };
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setPage(1); // reset to first page when category changes
+  };
+
+  const handleNextPage = () => setPage((prev) => prev + 1);
+  const handlePrevPage = () => setPage((prev) => Math.max(prev - 1, 1));
 
   if (isLoading || loadingCategory)
     return (
@@ -40,8 +52,6 @@ const MenuPage = () => {
         </div>
       </div>
     );
-
-  //console.log(foodItems);
 
   return (
     <div>
@@ -62,7 +72,7 @@ const MenuPage = () => {
           >
             <SwiperSlide style={{ width: "auto" }}>
               <button
-                onClick={() => setSelectedCategory("All")}
+                onClick={() => handleCategoryChange("All")}
                 className={`px-4 py-2 rounded-full font-semibold text-sm ${
                   selectedCategory === "All"
                     ? "bg-amber-500 text-white"
@@ -75,7 +85,7 @@ const MenuPage = () => {
             {data.map((category, index) => (
               <SwiperSlide key={index} style={{ width: "auto" }}>
                 <button
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-4 py-2 rounded-full font-semibold text-sm cursor-pointer ${
                     selectedCategory === category
                       ? "bg-amber-500 text-white"
@@ -90,7 +100,7 @@ const MenuPage = () => {
         </div>
       </div>
 
-      {/* Menu Sections */}
+      {/* Menu Section */}
       <div className="bg-[#2D0900]">
         <div className="w-full max-w-5xl mx-auto py-8 px-4">
           <SectionTitle
@@ -98,8 +108,8 @@ const MenuPage = () => {
             title={selectedCategory || "All Foods"}
           />
           <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {loadingCategory ? (
-              <p className="text-white">Loading food...</p>
+            {foodItems.length === 0 ? (
+              <p className="text-white">No food found.</p>
             ) : (
               foodItems.map((item, index) => (
                 <div
@@ -117,6 +127,26 @@ const MenuPage = () => {
               ))
             )}
           </div>
+
+          {/* Pagination */}
+          <div className="flex justify-center gap-4 mt-12">
+            <button
+              disabled={page === 1}
+              onClick={handlePrevPage}
+              className="px-4 py-2 bg-amber-500 text-white rounded disabled:opacity-50 cursor-pointer"
+            >
+              Previous
+            </button>
+            <span className="text-white text-lg">Page {page}</span>
+            <button
+              onClick={handleNextPage}
+              className="px-4 py-2 bg-amber-500 text-white rounded cursor-pointer disabled:opacity-50"
+              disabled={foodItems.length < 10}
+            >
+              Next
+            </button>
+          </div>
+
           {/* Food Detail Modal */}
           {selectedFood && (
             <FoodDetailModal
