@@ -42,11 +42,11 @@ export default function Contact() {
           </div>
           <div>
             <h4 className="font-medium">📞 Phone</h4>
-            <p>+880 1234 567890</p>
+            <p>+8801931095577, +8801749148685</p>
           </div>
           <div>
             <h4 className="font-medium">📧 Email</h4>
-            <p>info@riverviewresort.com</p>
+            <p>riverviewresortpabna@gmail.com</p>
           </div>
         </div>
 

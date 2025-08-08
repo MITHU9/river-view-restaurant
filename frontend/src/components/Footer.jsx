@@ -18,10 +18,15 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Contact</h2>
-          <p className="text-sm text-gray-400">123 Main Street, Food City</p>
-          <p className="text-sm text-gray-400">Phone: (123) 456-7890</p>
           <p className="text-sm text-gray-400">
-            Email: hello@gourmetbistro.com
+            A. Hamid Road, Icchamoti River, Boro Bridge, Pabna, Bangladesh 6600
+            Pabna, Bangladesh
+          </p>
+          <p className="text-sm text-gray-400 mt-2">
+            Phone: +8801749148685, +8801931095577
+          </p>
+          <p className="text-sm text-gray-400">
+            Email: riverviewresortpabna@gmail.com
           </p>
         </div>
 
