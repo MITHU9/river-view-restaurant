@@ -37,7 +37,7 @@ export default function AboutUs() {
       <section className=" backdrop-blur-sm py-20 text-gray-200">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <img
-            src="/chef.webp"
+            src="/chef.jpg"
             alt="Chef Maria Delgado"
             className="w-full h-96 object-cover shadow-lg"
           />
