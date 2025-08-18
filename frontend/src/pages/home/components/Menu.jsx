@@ -2,6 +2,7 @@ import MenuItem from "../../../components/MenuItem";
 import SectionTitle from "../../../components/SectionTitle";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useRandomFoods } from "../../../hooks/useRandomFoods";
 
 // Animation variants
 const containerVariants = {
@@ -22,52 +23,12 @@ const itemVariants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 };
 
-export const menuItems = [
-  {
-    name: "Roast Duck Breast",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Tuna Niçoise",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/salad-bg.jpg",
-  },
-  {
-    name: "Escalope de Veau",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/soup-bg.jpg",
-  },
-  {
-    name: "Chicken and Pizza Salad",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Fish Parmentier",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-  {
-    name: "Roasted Pork Belly",
-    description:
-      "Roasted duck breast (served pink) with gratin potato and a prontine cherry sauce",
-    price: "14.5",
-    image: "/pizza-bg.jpg",
-  },
-];
-
 const MenuSection = () => {
+  const { data, isLoading, isError } = useRandomFoods(6);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error fetching random foods</div>;
+
   return (
     <div className="bg-[#2D0900]">
       <motion.div
@@ -80,13 +41,13 @@ const MenuSection = () => {
         <SectionTitle subtitle="Check it out" title="FROM OUR MENU" />
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-          {menuItems.map((item, index) => (
+          {data?.map((item, index) => (
             <motion.div key={index} variants={itemVariants}>
               <MenuItem
                 name={item.name}
                 description={item.description}
                 price={item.price}
-                image={item.image}
+                image={item.image_url}
               />
             </motion.div>
           ))}

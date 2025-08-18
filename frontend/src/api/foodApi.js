@@ -44,3 +44,10 @@ export const getAllCategories = async () => {
   });
   return response.data;
 };
+
+export const getRandomFoods = async (limit = 6) => {
+  const response = await axios.get(`${baseURL}/random-food?limit=${limit}`, {
+    withCredentials: true,
+  });
+  return response.data;
+};

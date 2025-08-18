@@ -12,8 +12,6 @@ const Home = () => {
       <RestaurantSection />
       <FavoriteMenu />
       <MenuSection />
-
-      {/* Add more sections as needed */}
     </div>
   );
 };
